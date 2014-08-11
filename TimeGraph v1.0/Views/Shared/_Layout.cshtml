@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+            <div class="top-navigation-bar">
+                <div class="title">
+                    <p>@Html.ActionLink("TimeGraph", "Index", "Home")</p>
+                </div>
+                <div class="">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                </div>
+            </div>
+        </header>
+        <div class="left-menu">
+            <div class="hide-arrow"> < </div>
+            <nav>
+                <ul id="menu">
+                    <li>Menu 1</li>
+                    <li>Menu 2</li>
+                    <li>Menu 3</li>
+                </ul>
+            </nav>
+        </div>
+        <div id="body">
+            <section class="">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="">
+                <div class="">
+                    <p>&copy; @DateTime.Now.Year - TimeGraph</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
